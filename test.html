@@ -1,0 +1,112 @@
+<!-- the DOCTYPE declaration is required before the html tag to specify that an HTML page is being 			 presented
+-->
+<!DOCTYPE HTML> 
+
+<!-- the HTML tags are the root tag of the XML documents, 
+     all other HTML tags reside within the HTML tag 
+--> 
+<html 	
+  xmlns="http://www.w3.org/1999/xhtml" 
+  manifest="thisapplication.appcache" 
+  lang="en-US"> 
+  
+  <!-- 	*  	xmlns attribute specifies the namespace for the HTML file, in HTML5 its optional
+   	    	and is inferred to be http://www.w3.org/1999/xhtml when it is not incluided
+
+   	    *	manifest attribute specifies the location of the cache manifest file.
+   	    	this allos your application to cache information offline. 
+  --> 
+	
+	<!-- head element is a container for metadata (data about data) -->
+  	<head> 
+	
+		<title>This page title</title> 
+	
+	</head> 
+	
+	<!-- 	onload : this attribute specifies a JavaScript method to be called
+					 when the web page has finished its initial loading
+
+
+			ononline : this attribute specifies a JavaScript method to be called
+					   when a network connection is available for the web page
+
+		 	onresize : this attribute specifies a JavaScript method to be called
+					   when the web page has been resized 
+
+	-->				 		 	
+	<body onload="handleLoad" ononline="handleNetwork" onresize="handleResize"> 
+		
+		Welcome
+		
+		<hr />
+		
+		Home
+		
+		<h1>1st Header</h1>
+		<h2>2st Header</h2>
+		<h3>3st Header</h3>
+		<h4>4st Header</h4>
+		<h5>5st Header</h5>
+		<h6>6st Header</h6>
+		<h1>7st Header</h1>
+		<p>
+			<b>Lorem ipsum dolor sit amet</b>, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. 
+			<i>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</i>
+		</p>
+
+		<p>
+			<ins>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</ins> Aenean commodo ligula eget dolor. 
+			<del>Aenean massa</del>. <mark>Cum sociis natoque penatibus</mark> et magnis dis parturient montes, nascetur ridiculus mus
+		</p>
+
+		<br>
+
+	    <h1>Title</h1>
+	    <h2>Subtitle</h2>
+	    <h3>Topic</h3>
+	    <h4>Subtopic</h4>
+	    <p>
+	        Beginning of paragraph text
+	        <br />
+	        <strong>Remaining</strong> text after the <i>line break</i>
+	    </p>  
+
+	    <br>
+	    <span style="background-color: red;">This is the first line of text</span>
+	    <span style="background-color: green;">This is the second line of text</span>      
+		
+		<br>
+		<br>
+
+		<div>
+		    DIV is a block-level element
+		    <p>
+		        P is also a block-level element
+		    </p>
+		    <p>
+		        Notice the text is rendered on new lines
+		    </p>
+		</div>
+
+		<div>
+		    Notice the text is rendered on new lines
+		    <span>
+		    SPAN is an inline element rendered on the same line
+		    </span>
+		</div>
+		
+		<!-- The text in the alt attribute is rendered in scenarios where the image cannot be displayed. -->
+		<img src="images/person.png" alt="Person holding computer" />
+		
+
+		<p>
+		Paragraph Text <sup>Superscript Text</sup>
+		</p>
+
+		
+
+
+	</body>	   		 
+
+</html>
