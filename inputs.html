@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>
+				
+		</title>
+	</head>
+	
+	<body>
+		
+		<!-- text area -->			
+		<textarea rows="3" cols="30">We live in a mobile-first and cloud-first world. Computing is ubiquitous, and experiences span devices and exhibit ambient intelligence.
+		</textarea>	
+		
+		<br>
+
+		<!-- dropdown list -->
+		<select>
+		    <option value="DAT202x">Processing Big Data with Azure HDInsight</option>
+		    <option value="DAT204x">Introduction to R Programming</option>
+		    <option value="CLD203x">Office 365: Managing Identities and Services</option>
+		    <option value="DEV208x">Introduction to jQuery</option>
+		</select>
+		
+		<br>
+		
+		<!-- dropdown list with grouping related options -->
+		<select>
+		    <optgroup label="Data Platform">
+		        <option value="DAT202x">Processing Big Data with Azure HDInsight</option>
+		        <option value="DAT204x">Introduction to R Programming</option>
+		    </optgroup>
+		    <optgroup label="Cloud">
+		        <option value="CLD203x">Office 365: Managing Identities and Services</option>
+		    </optgroup>
+		    <optgroup label="Development">
+		        <option value="DEV208x">Introduction to jQuery</option>
+		    </optgroup>
+		</select>
+		
+		<!-- input element -->
+		<form action="URL" method="get" novalidate="novalidate">
+		  
+		 	<fieldset>	
+		 		<legend>Text Data</legend>
+			  Username: <input type="text" name="username" value="" placeholder="Username" />
+			  <br>
+			  E-mail Address: <input type="email" name="emailaddress" />
+			  <br>
+		  	</fieldset>
+		  
+		  	<fieldset>
+		  		<legend>Numeric Data</legend>
+			  <input type="range" name="age" min="0" max="100" value="25" />
+			  <br>
+			  <input type="submit" value="click me" />
+			</fieldset>
+		
+		</form>
+
+		<!-- button element -->
+		<!-- 
+			This special button element functions similarly to an input element 
+			of type button but it also allows you to render custom content 
+			within the button.
+		-->
+		<button type="button">
+		    <img src="images/microsoft.png" alt="Microsoft" />
+		    <br />
+		    Apply to Microsoft!
+		</button>
+		
+		<br>
+
+		<input name="profile_url" type="url" placeholder="readonly" readonly="readonly" />
+		<input type="submit" disabled="disabled" />
+		<input name="api_key" type="text" autocomplete="off" />
+		
+		
+
+	</body>
+
+</html>
