@@ -1,0 +1,17 @@
+basics1:	basics tags <!DOCTYPE>,<html>,<head>,<title>,<body>,<h>,<p>,<hr>,<span>,<div>,<br>
+
+basics2:	links <a>	
+
+inputs: 	<textarea>,<select>,<option>,<optgroupt>,<form>,<fieldset>,<legend>,<input>,<button>,<img>
+
+svg:		<svg>,<rect>,<circle>,<polygon>
+
+semantics: 	<header>,<nav>,<section>,<article>,<aside>,<footer>,<figure>
+
+media: 		<video>,<source>,<audio>
+
+lab1:		simple page structure <main>,<h>,<p>,<article>
+
+lab2:		simple page structure 2. <time>,<summary>,<label>
+
+	
