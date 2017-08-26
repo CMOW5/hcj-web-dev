@@ -1,0 +1,61 @@
+@media screen {
+    body {
+        background-color: white;
+    }
+}
+
+@media print {
+    body {
+        background-color: green; /*white => default */
+    }
+}
+
+/* 
+	In this example, we look at a media query that is 
+	applied ONLY if the browser is at least 500 pixels wide. 
+	In this example, we set the width of our nav element to 100 pixels 
+	if the screen is at least 500 pixels wide.
+*/
+
+@media (min-width: 500px) {
+    nav {
+        width: 100px;
+    }
+}
+
+/* You can use the same type of expression for browser height. */
+
+@media (min-height: 500px) {
+    nav {
+        height: 300px;
+    }
+}
+
+/* we can apply CSS styling if the width of the browser is between 500 and 1000 pixels */
+@media (min-width: 500px) and (max-width: 1000px) {
+    header {
+        font-size: larger;
+    }
+}
+
+/* We can also using a comma to represent the OR logical operator. 
+   In this example, we make the footer bold if the browser is less 
+   than 500 pixels wide or more than 1000 pixels wide.
+*/
+
+@media (min-width: 1000px), (max-width: 500px) {
+    footer {
+        font-weight: bold;
+    }
+}
+
+/*  we can combine multiple AND and OR expressions 
+    to create complex rules.
+*/
+
+@media screen and (min-width: 500px) and (max-width: 500px) {
+    article {
+        font-style: italic;
+    }
+}
+
