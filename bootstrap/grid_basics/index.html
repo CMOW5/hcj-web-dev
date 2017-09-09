@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Grid basics
+	</title>
+	<link rel="stylesheet" type="text/css" href="./styles/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+</head>
+<body>
+		
+		<!-- Grid basics -->	
+		<div class="container">
+				<div class="row">
+					<!-- make sure the column's size sum is 12 --> 
+					<!-- each item will take 1/3 of the page -->
+					<div class="col-md-4">
+						<h3>First</h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat at magna sit amet pretium. Curabitur vel nisi eu nisi blandit mattis. 
+					</div>
+					<div class="col-md-4">
+						<h3>Second</h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat at magna sit amet pretium. Curabitur vel nisi eu nisi blandit mattis. 
+					</div>
+					<div class="col-md-4">
+						<h3>Third</h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat at magna sit amet pretium. Curabitur vel nisi eu nisi blandit mattis. 
+					</div>
+				</div>
+		</div>
+
+		<hr>
+
+		<!-- nesting columns Demo -->
+		<div class="container">
+				<div class="row">
+					<!-- make sure the column's size sum is 12 --> 
+					<div class="col-md-4">
+						<h3>First</h3>
+						<!-- nesting columns -->
+						<div class="row">
+							<div class="col-md-6"> First Nest</div>
+							<div class="col-md-6"> Second Nest</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<h3>Second</h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat at magna sit amet pretium. Curabitur vel nisi eu nisi blandit mattis.
+					</div>
+					<div class="col-md-4">
+						<h3>Third</h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat at magna sit amet pretium. Curabitur vel nisi eu nisi blandit mattis. 
+					</div>
+				</div>
+		</div>
+
+		<hr>
+		<!-- Controlling placement Demo -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 mr-auto"><h3>First</h3>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				</div>
+				<div class="col-md-4"><h3>Second</h3>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-xs-12 col-md-6 push-md-6"><h3>Very Important</h3>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				</div>
+				<div class="col-xs-12 col-md-6 pull-md-6"><h3>Not too important</h3>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				</div>
+			</div>
+		</div>
+
+		<hr>
+		<!-- visibility -->
+		<div class="container">
+			<h2 class="hidden-lg-down">Large</h2>
+			<h2 class="hidden-md-up">Medium</h2>
+			
+		</div>
+	
+		<script  src="./scripts/jquery-3.2.1.min.js"></script>
+		<script  srt="./scripts/bootstrap.min.js"></script>
+</body>
+</html>

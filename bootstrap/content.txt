@@ -1,0 +1,3 @@
+basics:			adding bootstrap to a project
+
+grid_basics :	bootstrap grid, rows and cols, nesting columns, controlling 					placement
