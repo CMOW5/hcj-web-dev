@@ -1,0 +1,155 @@
+
+p { //selectpr
+    color: blue; //property : value
+}
+
+a CSS selector as the portion of the CSS rule that tells the browser on which HTML element to apply the defined style.
+
+"properties", the part of the CSS rule that tells the browser how to style specific aspects of the selected HTML element.
+
+/* combining multiple selectors */
+p, ul, ol {
+   color: blue;
+   background-color: pink;
+}
+
+
+
+-- COLOR PROPERTIES
+
+color : This property sets the foreground color of an element's text 				content, the default is black
+
+background-color : This property sets the background color of an element, 					   the default is transparent
+
+body {
+   background-color: teal;  /* keyword */
+   background-color: #00CC00; /* hex */
+   background-color: rgb(0,204,0); /*same green as above*/
+}
+
+
+
+-- FONT PROPERTIES
+
+font-family : This property sets the font face
+
+font-size : Font-size sets the overall scale of your text
+
+font-weight : 	The weight of a font is the thickness of the letters,
+				You can also set this property more specifically using numerical values 100, 200, 300, 400, 500, 600, 700, 800 or 900. Normal is represented as 400, whereas bold is 700.
+
+font-style : he font style property adjusts the angle of the letters in 				 relation to the horizontal plane
+
+text-decoration : 	Text-decoration adds a line across your text. You can 						set this line to be underneath your text, underline, 						through your text, line-through, or on top, overline. 
+
+
+body {
+	font-family: "Times New Roman", "New Century Schoolbook", serif;
+	font-size: 2.5em;
+	font-weight: bold; /*  bold, normal or lighter, or a number */
+	font-style: italic; /*  */ 
+	text-decoration: underline;
+}
+
+
+
+-- SPACING
+
+padding : Padding" is the white space that sits closest to an HTML element.
+
+border : The "border" is the area outside the padding of an HTML element
+
+margin : An HTML element's "margin" is the white space that sits outside 			 the border. When two margins touch they "collapse" such that				 the space between the elements is equivalent to the larger of 				 the two margins
+
+body {
+    margin-top: 20px;
+    margin-left: 70px;
+    padding: 10px 15px 20px 25px; /* top, right, bottom, left */
+    padding : 10px /* all sides */
+}
+
+
+
+-- SELECTORS
+
+* Classes
+
+Classes are an HTML attribute that specifies a name for a group of elements on the page. You can apply the class name to as many elements as you like, even if they are of different HTML tag types. (navbar links)
+Group HTML elements with similar style using classes
+
+<p class="className">The intro paragraph</p>
+
+.className {
+    color: blue;
+}
+
+* IDs
+
+An ID is an HTML attribute that specifies a name or unique identifier for a particular HTML element. They are like classes with a very important distinction: the value of the ID attribute must be unique throughout the document. (payButton, homeButton)
+Specifically style any single element on a page using IDs
+
+<p id="MyFirstId"> This is an extra special paragraph </p>
+
+#MyFirstId {
+    color: blue;
+}
+
+* Pseudo-classes
+
+Pseudo-classes are a way to select HTML elements based on their state as opposed to their HTML. Pseudo-classes must always be applied to an existing selector.
+Employ pseudo classes to make HTML elements more dynamic
+
+:link ->  style a link a user has not yet clicked
+:visited -> style a link a user has clicked
+
+
+a:visited {
+   color: gray;
+   font-style: italic;
+}
+
+:hover -> The hover pseudo-class is applied when the user points at an 			  object but doesn't activate it
+
+li:hover {
+   background-color: yellow;
+}
+
+:focus -> when a user has chosen to begin interacting with an element,			  often when the click into a form input such that the input 			  is then ready to accept keyboard input.
+
+input:focus {
+   background-color: blue;
+}
+	
+:active -> The active pseudo-class applies when an element is 					   activated. This happens in the time between when the 				   user clicks their mouse and they release it.
+
+* CONTEXTUAL SELECTORS
+
+When you use two selectors separated by a space on a rule, you scope the rule to the elements that correspond to the selector on the right that are INSIDE the elements that correspond to the selector on the left
+
+Contextual selection becomes especially useful when you structure your HTML with section tags like header, section, article and footer.
+
+Scope CSS rules using contextual selection
+
+// the imgs tags inside the p tag will be styled with this rule
+p img {
+    width: 100px;
+}
+
+
+-- CASCADING STYLES
+
+it's very common for HTML elements on a page to have multiple CSS rules competing for importance. That is because CSS has a way to figure out which rule "wins" when styles are conflicting. CSS actually computes a "weight" for each style rule and the one with the greatest weight wins. the most specific rule wins! 
+
+A rule is generally more specific if it applies to a fewer number of elements than another rule that encompasses those elements. The more facets a rule has the more specific it is.
+
+* When pseudo-classes are applied this is more specific than without the pseudo-class. For example, p:hover will win over just p.
+
+* Contextual selection is more specific because it scopes the rule to elements within a certain subset of those on the page. For example, a rule that applies to all the paragraphs within articles is more specific than a rule that applies to all the paragraphs on the page.
+
+* IDs are most specific because you are directly applying them to the desired HTML element. The rule based on an ID will always win over other rules
+
+* If two rules have the exact same weight, the one that comes later in the CSS document is what is applied.
+
+* You can use the "!important" modifier on a CSS property so that it will guarantee that style will be applied. This is a way for you to override the calculated weight.
+
+Build CSS rule sets with intention leveraging the cascading nature of CSS to manage conflicting rules
