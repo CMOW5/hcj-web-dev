@@ -153,3 +153,117 @@ A rule is generally more specific if it applies to a fewer number of elements th
 * You can use the "!important" modifier on a CSS property so that it will guarantee that style will be applied. This is a way for you to override the calculated weight.
 
 Build CSS rule sets with intention leveraging the cascading nature of CSS to manage conflicting rules
+
+
+
+-- POSITIONING
+
+
+* alignment 
+
+h1 {
+   text-align: center; /* center, right, left, justify */
+}
+
+ this property can only apply to block elements like paragraphs, divs and headers
+
+
+* line-height
+
+h1 {
+   line-height: 1.2;
+}
+
+If you change the height of the containing HTML block, the text will remain at the top of the block. However, if you instead use the "line-height" property, then the block will grow and the text will vertically center within it.
+
+* Width and height
+
+p {
+   width: 30%;
+}
+
+You can use pixel values for both width and height, but you'll most often want to use percentages to set these so that your elements grow and shrink as appropriate based on the screen size.
+
+Things are a bit more complicated with using a percentage to set an element's height. This is because typically the body's height is not specified, so if you use a percentage the size won't adjust.
+
+
+* min-width, max-width, min-height, max-height
+
+img {
+   width: 100%;
+   max-width: 1024px;
+}
+
+Setting width and height with percentages will save you work because your design will automatically optimize for the user's screen size. However, some elements can't grow and shrink as dynamically as text can.
+
+For example, images will get "pixelated" if you let them grow too large, and they can look really distorted. Thankfully, you can set max and min width and heights. This way, you can set a range for your image to grow and shrink where you know it will still look good. 
+
+
+* Positioning with padding and margin
+
+Once you have set the width for your element, then you can set margins as a way to position your element relative to others. One of the most commonly used margin settings is "auto". That is because if you set an element's left and right margin to auto it will be dynamically centered within its containing block.
+
+div {
+   width: 50%;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+However, note that this only works for block HTML elements like paragraphs, divs and headers. If you want to use this to position an inline element, such as img or a, you will need to tell CSS to treat them as block elements by setting display: block;
+
+img {
+   display: block;
+   width: 200px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+
+* float 
+
+The float property liberates an element from its automatic position and lifts it up to "float" on top of other elements in the direction you specify.  You can specify float either right, left or the default of none. 
+
+h1 {
+   width: 20em;
+   float: right;
+}
+
+* The Clear Property
+
+Once you have some elements floating things can get a little messy. Its easy for floating objects to overlap, and to prevent this you can use the "clear" property.
+
+p {
+   clear: both;
+}
+
+
+
+-- RELATIVE POSITIONING 
+
+
+* The position property
+
+The "position" property sets the algorithm for how the Web browser will compute the way the HTML elements are placed on the page. There are four different value options for the position property: 
+
+-> relative - It is the best way to build on the dynamic layout methods. This lets you specify where an HTML element should be relative to where it would be by default.
+
+-> static - This is the default setting and will place an element wherever the web browser computes it should be. 
+
+-> fixed - This places an element in a specific location within the window. You can use this to set an element to remain where it is regardless of scrolling. This was used heavily when "frames" were popular, however now it should be used very sparingly. 
+
+-> absolute - This allows you to position elements relative to their containing box. This removes an element from its normal flow (just like a floating element) so it can be difficult to control and make a layout that is truly dynamic. 
+
+div {
+   position: relative;
+}
+
+Once you've set the position to "relative" that frees you up to set the top, right, bottom and left properties- otherwise known as the "box offsets". These properties specify the distance between this object and its normal static position and the corner of the box that we are specifying.
+
+For example, if we set the "left" to be "30px", it will move the element 30px to the right away from the left of where it was placed by default.
+
+p {
+   position: relative;
+   left: 10px;
+}
+
+Note that position is not an inherited property so you will have to apply it individually to each element. Because of this it is best to use this approach to designing your layout sparingly and should only be used after you cannot achieve your desired layout with alignment or floating. 
