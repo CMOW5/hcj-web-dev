@@ -1,7 +1,0 @@
-index:		basic sintax, secion{propertie:value;}, section > child			
-
-index2:		classes 
-
-index3:		combining multiple css styles 
-
-			
