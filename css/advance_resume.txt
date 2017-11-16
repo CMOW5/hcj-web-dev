@@ -1,0 +1,34 @@
+Media Queries
+
+Media queries are simple filters that you can apply to CSS styles, which enables you to create a responsive experience. A key concept behind responsive design is fluidity and proportionality, as opposed to fixed-width layouts. In the following example we will use a media query to target devices with a screen width of 768 pixels or wider:
+
+//CSS to hide mobile toggle button for desktop device
+@media screen and (min-width: 768px) {
+    .btn-mobile-toggle {
+        display: none;
+    }
+}
+
+Media queries look at the capability of the device, and check the:
+
+-Width and height of the viewport
+-Width and height of the device
+-Page orientation
+-Resolution
+
+
+The most commonly used media queries are:
+
+* min-width Rules applied for any browser width over the value defined in the query
+
+* max-width Rules applied for any browser width below the value defined in the query
+
+* min-height Rules applied for any browser height over the value defined in the query
+
+* max-height Rules applied for any browser height below the value defined in the query
+
+* orientation:portrait Rules applied for any browser where the height is greater than or equal to the width
+
+* orientation:landscape Rules for any browser where the width is greater than the height
+
+Note: There is an important difference between min-width and min-device-width. The value for min-width is based on the size of the browser window, while the value for  min-device-width is based on the size of the display screen for the device.
