@@ -1,0 +1,53 @@
+section, header, footer {
+    margin: 20px;
+    border: 1px black solid;
+    padding: 10px;
+    min-height: 60px;
+}
+
+/* class grayBackground */
+.grayBackground {
+    background-color: #F0F2F1;
+}
+
+.tanBackground {
+    background-color: #D4C0A7;
+}
+
+.purpleBackground {
+    background-color: #B2A4A1;
+}
+
+/* only headers definitions will get this style reference */
+header.purpleBackground {
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* targeting h1's that are within a header element */
+header.purpleBackground > h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section.grayBackground {
+    color: #938373;
+}
+
+.title {
+    background-color: #A6BE9E;
+    font-weight: bold;
+}
+
+.article {
+    background-color: #357074;
+    color: #FFF3BC;
+    font-size: x-small;
+}
+
+.brand {
+    background-color: #082833;
+    color: #C24726;
+    font-weight: bold;
+    font-size: x-large;
+}

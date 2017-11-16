@@ -1,0 +1,25 @@
+/* when you hover over the sections within other sections,
+   multiple hover rules apply! 
+*/
+
+section {
+  color: red;
+}
+section section {
+  color: orange;
+}
+section section section {
+  color: green;
+}
+#section {
+  color: blue;
+}
+section:hover {
+  color: purple;
+}
+section:hover section:hover {
+  color: pink;
+}
+section:hover section:hover section:hover {
+  color: yellow;
+}
