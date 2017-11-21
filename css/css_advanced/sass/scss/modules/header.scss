@@ -1,0 +1,32 @@
+/***************************
+Header
+***************************/
+@mixin small-and-above() {
+    padding-top: 150px;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+        background:none;
+    }
+}
+
+.header-primary {
+    background: #9B8579;
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    /*  the next 2 properties are user to position .header-primary so that
+        it will appear on top of the hero section
+        Absolute position allows you to layer the element 
+        and z-index determines the layer level.
+    */
+    /*
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    */
+    /*
+    @include small-and-above();
+    */
+}
