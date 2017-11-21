@@ -1,0 +1,254 @@
+//Variable Example in SCSS
+$primary-background-color: #666666;
+
+//Nesting Example in SCSS
+.button {
+   .span {
+      font-weight:bold;
+   }
+   &:hover {
+      background: $primary-background-color;
+   }
+}
+
+//Mixin Example in SCSS
+@mixin title ($color, $size) {
+   color: $color;
+   cont-size: $size;
+}
+
+The following code includes the mixin into a .title-page class.
+
+//Add Mixin SCSS Example 
+.title-page {
+   @include title(gray, 2.5rem);
+}
+
+//Sass Example
+$text-color: #333333
+body
+     color: $text-color
+
+//SCSS Example
+$text-color: #333333;
+body {
+     color: $text-color;
+}
+
+
+**** Ampersand
+
+One of the basic features of Sass is the ampersand (&). 
+When you prepend an ampersand to a parameter in a nested Sass selector, 
+that selector becomes attached to the parent selector, 
+instead of being nested below it. This is immediately useful 
+for pseudo class selectors such as :hover or :after that need to be associated 
+with a selector.
+
+The following SCSS
+
+.parent {
+    &:before {...}
+}
+
+is the same as the following CSS.
+
+.parent:before {...}
+
+
+**** Combinatorial Explosion
+
+You can apply combinatorial explosion to many combinations of selectors. 
+Use it to add space between elements that are direct siblings (the + selector) 
+and direct descendants (the > selector).
+
+Example: This code sample adds a top margin to any paragraph that is a direct
+sibling of another paragraph.
+
+The following SCSS
+
+p {
+    + p {
+        margin-top:16px;
+    }
+}
+
+is the same as the following CSS.
+
+p + p {
+    margin-top:16px;
+}
+
+
+**** CSS and Inline Comments
+
+It’s always helpful to include comments in your CSS, in case you or someone 
+else needs to refer back to your code. With Sass, you can insert regular CSS 
+comments using /* at the beginning and */ at the end. Comments can span multiple lines, 
+and will be left intact in the final generated CSS.
+
+You can also include inline comments that are specific to the way Sass is written. 
+Unlike the CSS comments, Sass comments are not printed in the compiled CSS and are 
+single-line only. 
+Inline comments begin with a // to distinguish them from Sass code to be compiled.
+
+
+
+**** Variable
+
+When Sass is processed, it takes the variables you define and outputs normal CSS with your variable values placed in the CSS. You also apply descriptive names to your variables to label any data in your program; this allows any other users to easily understand the code that you’ve written. Some examples of variables include color, width, font-size, font-family, and borders. Sass uses the $ symbol to create a variable, as in the following:
+
+//Font Family Variable
+$font-primary: “Times New Roman", Georgia, Serif;
+
+
+
+**** Extend/Inheritance
+
+Use the extend command, @extend, to share a set of CSS properties from one 
+selector to another. This helps you avoid writing multiple class 
+names on HTML elements, and allows for semantic names in your CSS instead. 
+In the following example we will extend our primary 
+container to make a new container:
+
+//Container Rules
+.container {
+   max-width: 1024px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+//Container 2 Rules
+.container-2 {
+   @extend .container;
+   padding: 0 45px;
+}
+
+
+
+**** Import
+
+The CSS import option allows you to divide your CSS into smaller, more maintainable
+portions. Although each time you use @import in CSS, it creates another HTTP request. 
+Sass builds on top of the current CSS @import. Instead of requiring an HTTP request, 
+Sass takes the file that you want to import, and combines it with the file you're 
+importing into. This combine function then serves a single CSS file to the web browser.
+
+Note: When you import a file, you don't need to include the file extension .scss.
+
+
+
+**** Nesting
+
+If you have structured your website’s CSS well, you may not need to use many class 
+or ID selectors. Instead, you can apply nesting, which allows you to specify 
+properties to selectors within other selectors. 
+CSS lacks visual hierarchy when working with child selectors that you use to
+match elements which are the direct children of other elements. 
+Because of this, you have to write selectors and their combinations in separate lines.
+Nesting provides a visual hierarchy to your code, similar to HTML, and increases
+its readability.
+
+Note: Sass lets you nest selectors to help eliminate repetitive code, 
+but doing so results in every level of nesting creating more selectors 
+in your final CSS.
+
+
+
+**** Mixin
+
+You define a mixin as a CSS rule set. Mixins allow you to define common 
+properties once, and then reuse them throughout the rest of your CSS. 
+Specifically, mixins are a set of definitions that compiles according to parameters
+or static rules that you set. You can even pass in values to make your mixin more 
+flexible. For example, you can use mixins to write cross-browser background gradients, 
+CSS arrows, or vendor prefixes. To create a mixin, you use the @mixin directive 
+and give it a name. To create a clearfix mixin that you can add to selectors that 
+contain floated modules, use the following example:
+
+//Clearfix Mixin
+@mixin clearfix() { 
+   &:before,
+   &:after {
+      content: "";
+      display: table;
+   }
+   &:after {
+      clear: both;
+   }
+}
+
+//Add Clearfix to row
+.row {
+   @include clearfix();
+}
+
+
+
+**** Operations
+
+Sass contains standard math operators like +, -, *, /, and %; use them to convert 
+pixel values to percentages. In the following example we will use the multiply 
+operator to create a mixin that will convert pixel font-size into rem font-size:
+
+//Font-size Mixin for px to rem conversion
+@mixin font-size($size) {
+  font-size: $size * 1px;
+  font-size: $size * 0.1rem;
+}
+
+//To use the font-size mixin
+.title {
+   @include font-size(24);
+}
+
+
+
+**** Parent Reference/Pseudo Class
+
+Use the parent reference to easily attach a pseudo class to the selector. 
+A CSS pseudo class is a keyword that you add to selectors to specify a special 
+state of the element to be selected. Pseudo classes, together with pseudo elements, 
+let you apply a style to an element not only in relation to the content of the 
+document tree, but also in relation to external factors. These factors include 
+the history of the navigator (:visited, for example), the status of its content 
+(such as :checked on some form elements), or the position of the mouse 
+(like :hover, which lets you know if the mouse is over an element). 
+You can also add class, id, and attribute selectors via the parent reference.
+
+
+
+**** Parent Selector
+
+You can add a parent selector by using a trailing parent reference for parent element
+states where the children get specific classes. You can also use the parent selector
+to target browsers.
+
+
+**** Partial
+
+To modularize your CSS, you can create partial Sass files that contain CSS snippets.
+A partial is a Sass file named with a leading underscore, for example, _partial.scss. 
+The underscore tells Sass that the file is only a partial file, and that it should 
+not be generated into a CSS file. Sass partials are used with the @import directive.
+
+
+
+**** Placeholder Selector
+
+If you want to define sets of useful style definitions, and don’t want to create 
+separate public selectors in your CSS for each one of them, Sass lets you use 
+placeholder selectors. These are defined just like class selectors, but they use the
+percentage symbol (%) instead of a period (.) at the start of the selector.
+
+One thing to note about extending both styles and placeholder styles when they use
+global variables is that they add selectors to a base style, rather than duplicating CSS
+code. The value of the variables that were in effect when the original source style 
+was defined will carry forward, even if the new style redefines the variable locally.
+
+
+
+**** Root Directive
+
+Use the root directive reference to move anything below it to the root level, 
+so that it won’t inherit the selector under which it's nested.
