@@ -613,3 +613,41 @@ Theme Styles
 
 .background-quinary {
   background: #e7e1d7; }
+
+.frame {
+  overflow: hidden;
+  /* This code will hide the edges of any image 
+                         larger than the .frame.*/ }
+
+.frame-primary {
+  /*
+    @include small-and-above {
+        @include circle(355px);
+        position: relative;
+        top: -30px;
+        margin: 0 auto 63px auto;
+    }
+    */
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  margin: 25px auto 40px auto; }
+  .frame-primary img {
+    width: 100%; }
+
+.mask {
+  position: relative; }
+  .mask:before {
+    content: "";
+    /*  to position absolutely to the top left corner */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* to add specify that the :before will fill the frame */
+    width: 100%;
+    height: 100%; }
+
+.mask-primary:before {
+  /* to create a semi-transparent background that uses $primary-mask-color */
+  background: #F7941E;
+  opacity: 0.6; }

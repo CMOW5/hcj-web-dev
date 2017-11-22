@@ -3,6 +3,7 @@
 
 @import "base/normalize";
 @import "base/base";
+@import "base/mixins";
 
 /*layout*/
 @import "layouts/layout";
@@ -16,3 +17,5 @@
 @import "modules/media";
 @import "modules/nav";
 @import "themes/theme";
+@import "modules/frame";
+@import "modules/mask";
